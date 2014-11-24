@@ -8,9 +8,9 @@ package main;
 
 /**
  *
- * @author student
+ * @author Michal Szura
  */
-public class Main {
+public class Shape {
 
     /**
      * @param args the command line arguments
