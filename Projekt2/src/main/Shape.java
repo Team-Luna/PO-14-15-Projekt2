@@ -10,7 +10,7 @@ package main;
  *
  * @author Michal Szura
  */
-public class Shape {
+public interface Shape {
 
     /**
      * @param args the command line arguments

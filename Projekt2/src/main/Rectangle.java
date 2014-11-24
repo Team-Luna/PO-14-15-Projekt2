@@ -10,6 +10,6 @@ package main;
  *
  * @author student
  */
-public class Elipsis implements Shape{
+public class Rectangle implements Shape{
     
 }
