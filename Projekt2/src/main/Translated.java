@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package main;
 
 /**
- * Axis aligned  rectangle centered on the origin with sides of length a (x) and b (y).
+ * Shape shape translated by vector (x,y)
  * @author student
  */
-public class Rectangle implements Shape{
-    
-    public Rectangle(float a, float b){
-        
+public class Translated implements Shape {
+
+    public Translated(float x, float y, Shape shape) {
+
     }
 
     @Override

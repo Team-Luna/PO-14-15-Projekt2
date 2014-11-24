@@ -7,12 +7,12 @@
 package main;
 
 /**
- * Axis aligned  rectangle centered on the origin with sides of length a (x) and b (y).
+ * Axis aligned  ellipse centered on the origin with semi-axes of length a (x) and b (y).
  * @author student
  */
-public class Rectangle implements Shape{
+public class Ellipse implements Shape{
     
-    public Rectangle(float a, float b){
+    public Ellipse(float a, float b){
         
     }
 
@@ -20,4 +20,5 @@ public class Rectangle implements Shape{
     public boolean contains(float x, float y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }

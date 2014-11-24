@@ -19,4 +19,6 @@ public interface Shape {
         // TODO code application logic here
     }
     
+    public boolean contains(float x, float y);
+    
 }
