@@ -9,7 +9,7 @@ package shapes;
  * Shape shape translated by vector (x,y)
  * @author student
  */
-public class Translated implements Shape {
+public class Translated extends Location implements Shape {
 
     public Translated(float x, float y, Shape shape) {
 

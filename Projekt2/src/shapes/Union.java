@@ -9,7 +9,7 @@ package shapes;
  * Union of two shapes
  * @author student
  */
-public class Union implements Shape {
+public class Union extends Location implements Shape {
 
     public Union(Shape shape1, Shape shape2) {
 

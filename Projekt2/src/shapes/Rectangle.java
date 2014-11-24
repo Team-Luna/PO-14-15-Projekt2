@@ -10,7 +10,7 @@ package shapes;
  * Axis aligned  rectangle centered on the origin with sides of length a (x) and b (y).
  * @author student
  */
-public class Rectangle implements Shape{
+public class Rectangle extends Location implements Shape{
     
     public Rectangle(float a, float b){
         

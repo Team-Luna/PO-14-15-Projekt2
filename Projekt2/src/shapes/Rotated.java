@@ -9,10 +9,11 @@ package shapes;
  * Shape shape rotated  by angle counterclockwise around point (x,y)
  * @author student
  */
-public class Rotated implements Shape {
+public class Rotated extends Location implements Shape {
 
-    public Rotated(float x, float y, float angle, Shape shape) {
-
+    public Rotated(float x, float y, float angle, Shape shape) {       
+        setX((float) (x*Math.cos(angle) - y*Math.sin(angle)));
+        setY((float) (x*Math.sin(angle) + y*Math.cos(angle)));
     }
 
     @Override
