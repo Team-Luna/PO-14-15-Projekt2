@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package main;
+package shapes;
 
 /**
  * Axis aligned  ellipse centered on the origin with semi-axes of length a (x) and b (y).

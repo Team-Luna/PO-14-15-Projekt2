@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+
+package shapes;
 
 /**
- * Intersection of two shapes
+ * Axis aligned  rectangle centered on the origin with sides of length a (x) and b (y).
  * @author student
  */
-public class Intersection implements Shape {
-
-    public Intersection(Shape shape1, Shape shape2) {
-
+public class Rectangle implements Shape{
+    
+    public Rectangle(float a, float b){
+        
     }
 
     @Override

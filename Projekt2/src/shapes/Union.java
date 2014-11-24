@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package shapes;
 
 /**
- * Shape shape translated by vector (x,y)
+ * Union of two shapes
  * @author student
  */
-public class Translated implements Shape {
+public class Union implements Shape {
 
-    public Translated(float x, float y, Shape shape) {
+    public Union(Shape shape1, Shape shape2) {
 
     }
 

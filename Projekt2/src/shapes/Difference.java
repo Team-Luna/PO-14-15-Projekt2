@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package shapes;
 
 /**
- * Union of two shapes
+ * Difference of two shapes
  * @author student
  */
-public class Union implements Shape {
+public class Difference implements Shape {
 
-    public Union(Shape shape1, Shape shape2) {
+    public Difference(Shape shape1, Shape shape2) {
 
     }
 

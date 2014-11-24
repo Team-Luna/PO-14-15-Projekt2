@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package shapes;
 
 /**
- * Difference of two shapes
+ * Shape shape translated by vector (x,y)
  * @author student
  */
-public class Difference implements Shape {
+public class Translated implements Shape {
 
-    public Difference(Shape shape1, Shape shape2) {
+    public Translated(float x, float y, Shape shape) {
 
     }
 
