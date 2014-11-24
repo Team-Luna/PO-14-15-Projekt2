@@ -5,13 +5,20 @@
  */
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+import shapes.Shape;
+
 /**
  *
  * @author student
  */
 public class Main {
+    private static List<Shape> shapes;
 
     public static void main(String[] args) {
+        shapes = new ArrayList<>();
         // TODO code application logic here
+        // Display Functions
     }
 }
