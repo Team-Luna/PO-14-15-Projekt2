@@ -7,16 +7,23 @@ package shapes;
 
 /**
  * Shape shape translated by vector (x,y)
- * @author student
+ *
+ * @author Michal Szura
  */
-public class Translated extends Location implements Shape {
+public class Translated implements Shape {
+
+    Shape shape;
+    float transX;
+    float transY;
 
     public Translated(float x, float y, Shape shape) {
-
+        this.transX = x;
+        this.transY = y;
+        this.shape = shape;
     }
 
     @Override
     public boolean contains(float x, float y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return shape.contains(x - transX, y - transY);
     }
 }

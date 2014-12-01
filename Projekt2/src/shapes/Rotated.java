@@ -6,18 +6,30 @@
 package shapes;
 
 /**
- * Shape shape rotated  by angle counterclockwise around point (x,y)
- * @author student
+ * Shape shape rotated by angle counterclockwise around point (x,y)
+ *
+ * @author Michal Szura
  */
-public class Rotated extends Location implements Shape {
+public class Rotated implements Shape {
 
-    public Rotated(float x, float y, float angle, Shape shape) {       
-        setX((float) (x*Math.cos(angle) - y*Math.sin(angle)));
-        setY((float) (x*Math.sin(angle) + y*Math.cos(angle)));
+    Shape shape;
+    float pointX;
+    float pointY;
+    float angle;
+
+    public Rotated(float x, float y, float angle, Shape shape) {
+        this.shape = shape;
+        this.pointX = x;
+        this.pointY = y;
+        this.angle = angle;
     }
 
     @Override
     public boolean contains(float x, float y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        (x*Math.cos(angle) - y*Math.sin(angle));
+//        (x*Math.sin(angle) + y*Math.cos(angle));
+        float newX = (float) (pointX + (x-pointX)*Math.cos(-angle) - (y-pointY)*Math.sin(-angle));
+        float newY = (float) (pointY + (x-pointX)*Math.sin(-angle) + (y-pointY)*Math.cos(-angle));
+        return shape.contains(newX, newY);
     }
 }

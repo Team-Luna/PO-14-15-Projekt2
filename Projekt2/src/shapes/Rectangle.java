@@ -3,21 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package shapes;
 
 /**
- * Axis aligned  rectangle centered on the origin with sides of length a (x) and b (y).
- * @author student
+ * Axis aligned rectangle centered on the origin with sides of length a (x) and
+ * b (y).
+ *
+ * @author Michal Szura
  */
-public class Rectangle extends Location implements Shape{
-    
-    public Rectangle(float a, float b){
-        
+public class Rectangle implements Shape {
+
+    float a;//Border X
+    float b;//Border Y
+
+    public Rectangle(float a, float b) {
+        this.a = a;
+        this.b = b;
     }
 
     @Override
     public boolean contains(float x, float y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if ((x >= (-a / 2)) && (x <= (a / 2)) && (y >= (-b / 2)) && (y <= (b / 2))) {
+            return true;
+        }
+        return false;
     }
 }

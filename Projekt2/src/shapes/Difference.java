@@ -7,16 +7,24 @@ package shapes;
 
 /**
  * Difference of two shapes
- * @author student
+ *
+ * @author Michal Szura
  */
 public class Difference implements Shape {
 
-    public Difference(Shape shape1, Shape shape2) {
+    Shape a;
+    Shape b;
 
+    public Difference(Shape shape1, Shape shape2) {
+        this.a = shape1;
+        this.b = shape2;
     }
 
     @Override
     public boolean contains(float x, float y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (a.contains(x, y) && !b.contains(x, y)) {
+            return true;
+        }
+        return false;
     }
 }
