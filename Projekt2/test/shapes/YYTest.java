@@ -7,6 +7,7 @@ package shapes;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import visitor.ShapePrintVisitor;
 
 /**
  *
@@ -77,7 +78,8 @@ public class YYTest {
                                 new Translated(0, -3, new Ellipse(1, 1))
                         ),
                         new Translated(0, 3, new Ellipse(1, 1))
-                ));
+                )
+        );
 
         Shape test = new Difference(
                 new Rotated(0, 0, (float) Math.PI / 6, new Ellipse(12, 8)),
@@ -96,5 +98,36 @@ public class YYTest {
         assertFalse(test.contains(-0.277f, -5.004f));
         assertFalse(test.contains(-2.049f, -3.674f));
 
+    }
+
+    @Test
+    public void testPrinting() throws Exception {
+        Shape a = new Rectangle(6, 12);
+        Shape b = new Translated(3, 0, a);
+        Shape c = new Ellipse(6, 6);
+        Shape d = new Ellipse(7, 7);
+        Shape e = new Intersection(b, c);
+        Shape f = new Difference(d, e);
+        Shape g = new Ellipse(3, 3);
+        Shape h = new Translated(0, 3, g);
+        Shape i = new Union(f, h);
+        Shape j = new Ellipse(3, 3);
+        Shape k = new Translated(0, -3, j);
+        Shape l = new Difference(i, k);
+        Shape m = new Ellipse(1, 1);
+        Shape n = new Translated(0, -3, m);
+        Shape o = new Union(l, n);
+        Shape p = new Ellipse(1, 1);
+        Shape r = new Translated(0, 3, p);
+        Shape s = new Difference(o, r);
+        Shape t = new Ellipse(12, 8);
+        Shape u = new Rotated(0, 0, (float) Math.PI / 6, t);
+        Shape yy = new Rotated(0, 0, (float) Math.PI, s);
+
+        Shape test = new Difference(u, yy);
+
+        test.accept(new ShapePrintVisitor());
+        System.out.println("--------------");
+        i.accept(new ShapePrintVisitor());
     }
 }

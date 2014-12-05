@@ -5,6 +5,8 @@
  */
 package shapes;
 
+import visitor.Visitator;
+
 /**
  * Difference of two shapes
  *
@@ -26,5 +28,18 @@ public class Difference implements Shape {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void accept(Visitator v) {
+        v.visit(this);
+    }
+
+    @Override
+    public String print() {
+        if (a instanceof Rectangle || a instanceof Ellipse) {
+            return ">Difference \n" + a.print().replace("|", "") + " \n" + b.print() + "+";
+        }
+        return ">Difference \n" + a.print() + " \n" + b.print() + "+";
     }
 }

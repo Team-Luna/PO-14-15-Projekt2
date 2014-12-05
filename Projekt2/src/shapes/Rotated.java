@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package shapes;
+
+import visitor.Visitator;
 
 /**
  * Shape shape rotated by angle counterclockwise around point (x,y)
@@ -26,10 +23,18 @@ public class Rotated implements Shape {
 
     @Override
     public boolean contains(float x, float y) {
-//        (x*Math.cos(angle) - y*Math.sin(angle));
-//        (x*Math.sin(angle) + y*Math.cos(angle));
-        float newX = (float) (pointX + (x-pointX)*Math.cos(-angle) - (y-pointY)*Math.sin(-angle));
-        float newY = (float) (pointY + (x-pointX)*Math.sin(-angle) + (y-pointY)*Math.cos(-angle));
+        float newX = (float) (pointX + (x - pointX) * Math.cos(-angle) - (y - pointY) * Math.sin(-angle));
+        float newY = (float) (pointY + (x - pointX) * Math.sin(-angle) + (y - pointY) * Math.cos(-angle));
         return shape.contains(newX, newY);
+    }
+
+    @Override
+    public void accept(Visitator v) {
+        v.visit(this);
+    }
+
+    @Override
+    public String print() {
+        return ">Rotated(" + pointX + "," + pointY + "," + angle + ") \n" + shape.print();
     }
 }

@@ -5,6 +5,8 @@
  */
 package shapes;
 
+import visitor.Visitator;
+
 /**
  * Axis aligned ellipse centered on the origin with semi-axes of length a (x)
  * and b (y).
@@ -31,4 +33,13 @@ public class Ellipse implements Shape {
         return false;
     }
 
+    @Override
+    public void accept(Visitator v) {
+        v.visit(this);
+    }
+
+    @Override
+    public String print() {
+        return "Ellipse(" + a + "," + b + ")|";
+    }
 }

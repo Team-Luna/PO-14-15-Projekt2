@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package shapes;
+
+import visitor.Visitator;
 
 /**
  * Shape shape translated by vector (x,y)
@@ -25,5 +22,15 @@ public class Translated implements Shape {
     @Override
     public boolean contains(float x, float y) {
         return shape.contains(x - transX, y - transY);
+    }
+
+    @Override
+    public void accept(Visitator v) {
+        v.visit(this);
+    }
+
+    @Override
+    public String print() {
+        return ">Translated(" + transX + "," + transY + ")\n" + shape.print();
     }
 }

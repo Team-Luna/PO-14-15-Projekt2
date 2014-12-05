@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package shapes;
+
+import visitor.Visitator;
 
 /**
  * Axis aligned rectangle centered on the origin with sides of length a (x) and
@@ -27,5 +24,15 @@ public class Rectangle implements Shape {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void accept(Visitator v) {
+        v.visit(this);
+    }
+
+    @Override
+    public String print() {
+        return "Rectangle(" + a + "," + b + ")|";
     }
 }
