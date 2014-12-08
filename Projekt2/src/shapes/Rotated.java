@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -7,9 +8,9 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Rotated implements Shape {
+public class Rotated implements Shape, Iterable<Shape> {
 
-    Shape shape;
+    public Shape shape;
     float pointX;
     float pointY;
     float angle;
@@ -36,5 +37,15 @@ public class Rotated implements Shape {
     @Override
     public String print() {
         return ">Rotated(" + pointX + "," + pointY + "," + angle + ") \n" + shape.print();
+    }
+
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Rotated";
     }
 }

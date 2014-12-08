@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -8,7 +9,7 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Rectangle implements Shape {
+public class Rectangle implements Shape, Iterable<Shape> {
 
     float a;//Border X
     float b;//Border Y
@@ -34,5 +35,15 @@ public class Rectangle implements Shape {
     @Override
     public String print() {
         return "Rectangle(" + a + "," + b + ")|";
+    }
+
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Rectangle(" + a + "," + b + ")";
     }
 }

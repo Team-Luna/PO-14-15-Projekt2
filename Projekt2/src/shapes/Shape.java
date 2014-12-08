@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -13,4 +14,8 @@ public interface Shape {
     void accept(Visitator v);
 
     public String print();
+    
+    public String toDebugString();
+
+    public Iterator<Shape> iterator();
 }

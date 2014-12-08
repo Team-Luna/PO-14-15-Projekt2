@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -7,10 +8,10 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Intersection implements Shape {
+public class Intersection implements Shape, Iterable<Shape> {
 
-    Shape a;
-    Shape b;
+    public Shape a;
+    public Shape b;
 
     public Intersection(Shape shape1, Shape shape2) {
         this.a = shape1;
@@ -36,5 +37,15 @@ public class Intersection implements Shape {
             return ">Intersection \n" + a.print().replace("|", "") + "\n" + b.print() + "+";
         }
         return ">Intersection \n" + a.print() + "\n" + b.print() + "+";
+    }
+
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Intersection";
     }
 }

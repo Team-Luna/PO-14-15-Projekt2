@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -7,9 +8,9 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Translated implements Shape {
+public class Translated implements Shape, Iterable<Shape> {
 
-    Shape shape;
+    public Shape shape;
     float transX;
     float transY;
 
@@ -32,5 +33,15 @@ public class Translated implements Shape {
     @Override
     public String print() {
         return ">Translated(" + transX + "," + transY + ")\n" + shape.print();
+    }
+    
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Translated";
     }
 }

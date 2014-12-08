@@ -5,6 +5,7 @@
  */
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -13,7 +14,7 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Ellipse implements Shape {
+public class Ellipse implements Shape, Iterable<Shape> {
 
     float a;//X Radius
     float b;//Y Radius
@@ -41,5 +42,15 @@ public class Ellipse implements Shape {
     @Override
     public String print() {
         return "Ellipse(" + a + "," + b + ")|";
+    }
+
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Ellipse(" + a + "," + b + ")";
     }
 }

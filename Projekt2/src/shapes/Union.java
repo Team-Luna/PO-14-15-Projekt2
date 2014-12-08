@@ -1,5 +1,6 @@
 package shapes;
 
+import java.util.Iterator;
 import visitor.Visitator;
 
 /**
@@ -7,10 +8,10 @@ import visitor.Visitator;
  *
  * @author Michal Szura
  */
-public class Union implements Shape {
+public class Union implements Shape, Iterable<Shape> {
 
-    Shape a;
-    Shape b;
+    public Shape a;
+    public Shape b;
 
     public Union(Shape shape1, Shape shape2) {
         this.a = shape1;
@@ -36,5 +37,15 @@ public class Union implements Shape {
             return ">Union \n" + a.print().replace("|", "") + " \n" + b.print() + "+";
         }
         return ">Union \n" + a.print() + " \n" + b.print() + "+";
+    }
+
+    @Override
+    public Iterator<Shape> iterator() {
+        return new ShapeIterator(this);
+    }
+
+    @Override
+    public String toDebugString() {
+        return "Union";
     }
 }
